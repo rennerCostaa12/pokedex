@@ -1,0 +1,99 @@
+.container-pokemons {
+    width: 100%;
+    color: #f1f1f1f1;
+    padding: 0.5rem;
+}
+
+.content-logo {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.content-logo img {
+    width: 350px;
+    min-width: 270px;
+}
+
+.content-search-pokemons {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 1.2rem;
+}
+
+.content-pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cards-pokemon {
+    background-image: url('https://besthqwallpapers.com/Uploads/7-3-2021/159659/pokeball-4k-space-minimal-pokemon-lets-go.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 250px;
+    padding: 1rem 0;
+    border-radius: 8px;
+    transform: scale(0.9);
+    transition: all ease 0.3s;
+    -webkit-box-shadow: 0px 0px 19px 1px #000000bf;
+    -moz-box-shadow: 0px 0px 19px 1px #000000bf;
+    box-shadow: 0px 0px 19px 1px #000000bf;
+}
+
+.content-btn-and-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.content-btn-and-id button {
+    color: #ce2f2f;
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    transition: all ease 0.3s;
+    transform: scale(0.9);
+}
+
+.content-btn-and-id button:hover {
+    color: #ad0d0d;
+    transform: scale(1);
+}
+
+.content-data-pokemons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards-pokemon:hover {
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.name-pokemon {
+    font-size: 23px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.type-pokemon {
+    font-size: 16px;
+    color: #666565;
+}
+
+.image-pokemon {
+    width: 100px;
+}
+
+@media(max-width: 600px) {
+    .content-search-pokemons {
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
