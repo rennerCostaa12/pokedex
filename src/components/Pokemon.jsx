@@ -1,11 +1,10 @@
 import ButtonFavorites from "./ButtonFavorite";
+import { Link } from "react-router-dom";
 
 export default function Pokemon({
     dataPokemon,
     Loading,
     namePokemon,
-    UpdateListPokemonsFavorites,
-    ListPokemonsFavorites
 }) {
 
     return (
@@ -44,10 +43,7 @@ export default function Pokemon({
                             <div className="content-btn-and-id">
                                 <span>#{value.id}</span>
                                 <ButtonFavorites
-                                    UpdateListPokemonsFavorites={UpdateListPokemonsFavorites}
-                                    ListPokemonsFavorites={ListPokemonsFavorites}
-                                    idPokemon={value.id}
-                                    namePokemon={value.name}
+                                    Pokemon={value}
                                 />
                             </div>
 
@@ -55,6 +51,7 @@ export default function Pokemon({
                                 <img className="image-pokemon" src={value.sprites.front_default} alt="Image Pokemon" />
                                 <span style={{ color: colorCard }} className="name-pokemon">{value.name}</span>
                                 <small className="type-pokemon">{value.types[0].type.name}</small>
+                                <Link className="details-link" to={`detail/${value.name}`}>Ver Detalhes</Link>
                             </div>
                         </div>
                     )
