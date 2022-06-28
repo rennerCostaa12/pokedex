@@ -1,39 +1,33 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
+import { FavoritesContext } from "../contexts/favoritesContext";
+import { useContext } from "react";
 
 export default function ButtonFavorites({
-    UpdateListPokemonsFavorites,
-    ListPokemonsFavorites,
-    namePokemon
+    Pokemon
 }) {
+
+    const { setFavorites, favorites } = useContext(FavoritesContext)
 
     const IconHeartFull = <FontAwesomeIcon icon={faHeart} />
     const IconHeartEmpty = <FontAwesomeIcon icon={faHeartBroken} />
 
-    function handleIsFavorited() {
-        const updateFavorites = [...ListPokemonsFavorites];
-        const indexPokemon = updateFavorites.indexOf(namePokemon);
-
-        console.log(indexPokemon)
-
-        if (indexPokemon >= 0) {
-            updateFavorites.slice(indexPokemon, 1);
-            UpdateListPokemonsFavorites(
-                state => [...state.slice(0, indexPokemon),
-                ...state.slice(indexPokemon + 1, state.length)]
-            )
-        } else {
-            updateFavorites.push(namePokemon);
-            UpdateListPokemonsFavorites(updateFavorites)
-        }
+    function handleFavorited() {
+        setFavorites([...favorites, Pokemon])
     }
+
+    function handleRemoveFavorited() {
+        setFavorites(favorites.filter((poke) => poke.name !== Pokemon.name))
+    }
+
+    const isFavorite = favorites.some((poke) => poke.name === Pokemon.name);
 
     return (
         <button
-            onClick={handleIsFavorited}
-            title={ListPokemonsFavorites.includes(namePokemon) ? "Desfavoritar Pokemon" : "Favoritar Pokemon"}
+            onClick={() => isFavorite ? handleRemoveFavorited() : handleFavorited()}
+            title={favorites.includes(Pokemon.name) ? "Desfavoritar Pokemon" : "Favoritar Pokemon"}
         >
-            {ListPokemonsFavorites.includes(namePokemon) ? IconHeartFull : IconHeartEmpty}
+            {isFavorite ? IconHeartFull : IconHeartEmpty}
         </button>
     )
 }

@@ -1,6 +1,10 @@
 import { Heart } from "phosphor-react";
+import { useContext } from "react";
+import { FavoritesContext } from "../contexts/favoritesContext";
 
-export default function CountFavorites({ countFavorites }) {
+export default function CountFavorites() {
+    const { favorites } = useContext(FavoritesContext);
+
     return (
         <div style={{
             display: "flex",
@@ -9,7 +13,7 @@ export default function CountFavorites({ countFavorites }) {
             padding: "1rem"
         }}>
             <Heart color="#AE2983" weight="fill" size={32} />
-            <h3>{countFavorites.length}</h3>
+            <h3>{favorites.length}</h3>
         </div>
     )
 }
