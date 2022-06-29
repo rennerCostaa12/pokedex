@@ -33,57 +33,62 @@ export default function PokemonDetails() {
     return (
         <div className="container-pokemon-details">
             <div className="content-pokemon">
+                <h1 style={{ textAlign: "center", fontSize: "40px" }}>
+                    {namePokemon.toUpperCase()}
+                </h1>
+
                 <div className="header-detail">
                     <Link className="link-back" to="/">Voltar</Link>
                 </div>
 
-                <div className="content-pokemon-details">
-                    <div className="content-img-pokemon">
-                        <img src={imageSource} alt={`Image ${namePokemon}`} />
-                    </div>
+                <div className="container-content-pokemon">
+                    <div className="content-pokemon-details">
+                        <div className="content-img-pokemon">
+                            <img src={imageSource} alt={`Image ${namePokemon}`} />
+                        </div>
 
-                    <div className="content-informations-pokemon">
-                        <div>
-                            <h1 style={{ textAlign: "center" }}>ID: {idPokemon}</h1>
-                            <h1 style={{ textAlign: "center" }}>{namePokemon.toUpperCase()}</h1>
+                        <div className="content-informations-pokemon">
+                            <div>
+                                <h1 style={{ textAlign: "center" }}>ID: {idPokemon}</h1>
 
-                            <div className="content-informations">
-                                <div className="height-pokemon">
-                                    <h4>Altura:</h4>
-                                    <div>
-                                        <span>{heightPokemon}</span>
+                                <div className="content-informations">
+                                    <div className="height-pokemon">
+                                        <h4>Altura:</h4>
+                                        <div>
+                                            <span>{heightPokemon}</span>
+                                        </div>
+                                    </div>
+                                    <div className="weight-pokemon">
+                                        <h4>Peso:</h4>
+                                        <div>
+                                            <span>{weightPokemon}</span>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div className="weight-pokemon">
-                                    <h4>Peso:</h4>
-                                    <div>
-                                        <span>{weightPokemon}</span>
+
+                                <div className="content-types">
+                                    <div className="types-pokemon">
+                                        <h4>Tipos:</h4>
+                                        {typesPokemon.map((value, key) => {
+                                            return (
+                                                <div key={key} style={{ display: "inline-block" }}>
+                                                    <span>{value.type.name}</span>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
-
                                 </div>
-                            </div>
 
-                            <div className="content-types">
-                                <div className="types-pokemon">
-                                    <h4>Tipos:</h4>
-                                    {typesPokemon.map((value, key) => {
-                                        return (
-                                            <div key={key} style={{ display: "inline-block" }}>
-                                                <span>{value.type.name}</span>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
-                            <div className="content-abilities">
-                                <h3>Habilidades</h3>
-                                <div>
-                                    {abilitiesPokemon.map((value, key) => {
-                                        return (
-                                            <div className="abilities" key={key}>{value.ability.name}</div>
-                                        )
-                                    })}
+                                <div className="content-abilities">
+                                    <h3>Habilidades</h3>
+                                    <div>
+                                        {abilitiesPokemon.map((value, key) => {
+                                            return (
+                                                <div className="abilities" key={key}>{value.ability.name}</div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                             </div>
                         </div>
