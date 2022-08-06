@@ -12,16 +12,16 @@
 
 <ul>
 <li>
-<a href="https://pt-br.reactjs.org"/>React</a>
+<a href="https://pt-br.reactjs.org"/>ReactJS</a>
 </li>
 <li>
-<a href="https://pt-br.reactjs.org"/>Javascript</a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"/>Javascript</a>
 </li>
 <li>
-<a href="https://pt-br.reactjs.org"/>HTML</a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"/>HTML</a>
 </li>
 <li>
-<a href="https://pt-br.reactjs.org"/>CSS</a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"/>CSS</a>
 </li>
 </ul>
 
